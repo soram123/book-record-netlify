@@ -13,10 +13,12 @@ mongoose.connect(dbUrl)
  .then(()=>console.log("Mongodb connection successful!"))
  .catch(error=>console.log(`unable to connect due to ${error}`))
 
-// app.use(express.json()) //middleware
+app.use(express.json()) //middleware
 
  router.get('/',function(req,res){
-    res.send("welcome to book store api!")
+    res.json({
+        "title":"welcome to book store api!"
+    })
  })
 
  router.get('/api/book',(req,res)=>{
